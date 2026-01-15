@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introspect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background-color: #3d3d3d;
+    }
+
+    .logo {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.75rem;
+      color: #cd5c5c;
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav a:hover {
+      color: #cd5c5c;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600&h=900&fit=crop') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 3rem;
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #333;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 5rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content-section h2 {
+      color: #cd5c5c;
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-section p {
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .btn-outline-coral {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #cd5c5c;
+      color: #cd5c5c;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+    }
+
+    .btn-outline-coral:hover {
+      background: #cd5c5c;
+      color: white;
+    }
+
+    /* Featured Cards */
+    .featured-section {
+      background: #f5f5f5;
+      padding: 4rem 3rem;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .featured-card h3 {
+      color: #cd5c5c;
+      font-size: 1.25rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-card p {
+      line-height: 1.8;
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 5rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .feature-item {
+      text-align: left;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.5rem;
+      color: #999;
+    }
+
+    .feature-item h3 {
+      color: #cd5c5c;
+      font-size: 1.125rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-item p {
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #cd5c5c;
+      padding: 4rem 3rem;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-section h2 {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-section input::placeholder,
+    .contact-section textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .contact-section textarea {
+      min-height: 150px;
+      resize: vertical;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-white {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #d35656;
+      border: none;
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-white:hover {
+      background: #b84848;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav {
+        gap: 1rem;
+      }
+
+      .hero-content {
+        padding: 0 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .featured-grid,
+      .features-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section,
+      .featured-section,
+      .features-section,
+      .contact-section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="logo">introspect</a>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Generic</a>
+      <a href="#">Elements</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Introspect: A Free + Fully Responsive Site Template by HTT...</h1>
+      <a href="#" class="btn-outline">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="content-section">
+    <h2>Magna Etiam Lorem</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do the eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a href="#" class="btn-outline-coral">Learn More</a>
+  </section>
+
+  <!-- Featured Cards -->
+  <section class="featured-section">
+    <div class="featured-grid">
+      <div class="featured-card">
+        <h3>Pellenrsque Adipis</h3>
+        <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=600&h=400&fit=crop" alt="Smartwatch on wrist">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do the eiusmod tempor incididunt ut labore et dolore magna the eiusmod tempor incididunt ut labore et dolore magna al.</p>
+      </div>
+      <div class="featured-card">
+        <h3>Morbi Interdum Mol</h3>
+        <img src="https://images.unsplash.com/photo-1504691342899-4d92b50853e1?w=600&h=400&fit=crop" alt="Vintage typewriter on desk">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do the eiusmod tempor incididunt ut labore et dolore magna the eiusmod tempor incididunt ut labore et dolore magna al.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="features-grid">
+      <div class="feature-item">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="4" width="20" height="14" rx="2"/>
+          <path d="M2 8h20"/>
+        </svg>
+        <h3>Tempus Feugiat</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do the eiusmod tempor incididunt ut labore.</p>
+        <a href="#" class="btn-outline-coral">Learn More</a>
+      </div>
+      <div class="feature-item">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        <h3>Aliquam Nulla</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do the eiusmod tempor incididunt ut labore.</p>
+        <a href="#" class="btn-outline-coral">Learn More</a>
+      </div>
+      <div class="feature-item">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="4" width="20" height="14" rx="2"/>
+          <path d="M2 8h20"/>
+        </svg>
+        <h3>Sed Magna</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do the eiusmod tempor incididunt ut labore.</p>
+        <a href="#" class="btn-outline-coral">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Get In Touch</h2>
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+        </div>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit" class="btn-white">Send Message</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
