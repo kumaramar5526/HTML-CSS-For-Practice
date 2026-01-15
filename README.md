@@ -68,14 +68,14 @@ No JavaScript, no frameworks
 
 ## Technologies Used
 
-HTML5
-CSS3
-Flexbox
-CSS Grid
+HTML5,
+CSS3,
+Flexbox,
+CSS Grid,
 Media Queries
 
-No JavaScript
-No Bootstrap
+No JavaScript,
+No Bootstrap,
 No external libraries
 
 ---
