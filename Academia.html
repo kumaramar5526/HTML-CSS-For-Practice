@@ -1,0 +1,1703 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academia - Online Education & Learning</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* ================= HEADER REDESIGN ================= */
+
+      .top-header {
+        background: #8fb9bc;
+        color: white;
+        padding: 20px 50px;
+        flex-direction: column; /* THIS moves divs to different lines */
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        width: 100%;
+      }
+
+      /* TOP BAR */
+
+      .top-bar {
+        color: white;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-area h1 {
+        font-size: 32px;
+        font-weight: 800;
+      }
+
+      .logo-area p {
+        font-size: 14px;
+      }
+
+      .top-right {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .social {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+      }
+
+      /* NAV BAR */
+
+      .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(158, 195, 198, 0.9);
+        padding: 0 60px;
+        height: 80px;
+        
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 35px;
+        flex-wrap: wrap;
+      }
+
+      .certificate-wrapper {
+        flex-shrink: 0;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .nav-links a.active {
+        color: #2d9693;
+      }
+
+      /* ANGLED BUTTON SECTION */
+
+      .btn-cert {
+        height: 100%;
+        padding: 0 60px;
+        background: #23877f;
+        color: white;
+        border: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      /* Left angled cut */
+
+      .btn-cert::before {
+        content: "";
+        position: absolute;
+        left: -40px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 80px solid #23877f;
+        border-left: 40px solid transparent;
+      }
+
+      /* Top bar */
+      .top-header {
+        background: #8fb9bc;
+        color: white;
+        padding: 20px 50px;
+      }
+
+      /* Navigation bar */
+      .main-nav {
+        background: #9ec3c6;
+        padding: 20px 50px;
+      }
+      .logo-area {
+        margin-bottom: 20px;
+      }
+
+      .logo-area h1 {
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .logo-area span {
+        font-size: 13px;
+        letter-spacing: 1px;
+      }
+
+      .header-contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-contact div {
+        font-size: 14px;
+      }
+
+      .social-circle {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-circle a {
+        width: 45px;
+        height: 45px;
+        background: #2d9693;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .social-circle a:hover {
+        background: #1f6a65;
+      }
+
+      /* NAV BAR */
+
+      .main-nav {
+        background: #9ec3c6;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .main-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+
+      .main-nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+      }
+
+      .btn-cert {
+        background: #2d9693;
+        padding: 15px 40px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* ================= TESTIMONIAL REDESIGN ================= */
+
+      .testimonials {
+        background: #f5f5f5;
+        padding: 80px 50px;
+        text-align: center;
+      }
+
+      .testimonial-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .testimonial-box {
+        background: white;
+        padding: 40px;
+        width: 350px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        text-align: left;
+      }
+
+      .testimonial-box.active {
+        background: #2d9693;
+        color: white;
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-header img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+
+      .testimonial-role {
+        font-size: 13px;
+        color: #2d9693;
+        font-weight: bold;
+      }
+
+      .testimonial-box.active .testimonial-role {
+        color: white;
+      }
+
+      .testimonial-text {
+        line-height: 1.7;
+        margin-top: 20px;
+      }
+
+      /* ================= FOOTER SOCIAL UPDATE ================= */
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        width: 45px;
+        height: 45px;
+        background: #2d9693;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background: #f5f5f5;
+      }
+
+      /* Header Navigation */
+      header {
+        background: #5cc4c1;
+        color: white;
+        padding: 15px 50px;
+
+        justify-content: space-between;
+        align-items: center;
+      }
+      header {
+        width: 100%;
+      }
+
+      .top-bar {
+        background: #8fb9bc;
+        color: white;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-right {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .social {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .nav-bar {
+        background: #9ec3c6;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-bar nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 25px;
+        font-weight: 600;
+      }
+
+      .btn-certificate {
+        background: #2d9693;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .header-info {
+        display: flex;
+        gap: 40px;
+        font-size: 14px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        transition: opacity 0.3s;
+      }
+
+      nav a:hover {
+        opacity: 0.8;
+      }
+
+      .btn-certificate {
+        background: #2d9693;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .btn-certificate:hover {
+        background: #1f6a65;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #5cc4c1 0%, #4aa39f 100%);
+        color: white;
+        padding: 60px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .btn-primary {
+        background: #2d9693;
+        color: white;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .btn-primary:hover {
+        background: #1f6a65;
+      }
+
+      .btn-secondary {
+        background: white;
+        color: #5cc4c1;
+        padding: 14px 30px;
+        border: 2px solid #5cc4c1;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+
+      .btn-secondary:hover {
+        background: #5cc4c1;
+        color: white;
+      }
+
+      .hero-image {
+        flex: 1;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /* Benefits Section */
+      .benefits {
+        background: white;
+        padding: 60px 50px;
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+      }
+
+      .benefits-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .benefits-content h3 {
+        color: #5cc4c1;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .benefits-content h2 {
+        font-size: 42px;
+        margin-bottom: 40px;
+        font-weight: bold;
+      }
+
+      .benefit-item {
+        margin-bottom: 40px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .benefit-item-icon {
+        width: 50px;
+        height: 50px;
+        background: #5cc4c1;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        flex-shrink: 0;
+        color: white;
+      }
+
+      .benefit-item h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .benefit-item p {
+        color: #999;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      /* Statistics Section */
+      .stats {
+        background: linear-gradient(135deg, #5cc4c1 0%, #4aa39f 100%);
+        color: white;
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        text-align: center;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* Courses Section - Auto Scroll */
+      .courses-intro {
+        background: white;
+        padding: 60px 50px;
+        text-align: center;
+      }
+
+      .section-label {
+        color: #5cc4c1;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      .section-title {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        color: #333;
+      }
+
+      .carousel-container {
+        overflow: hidden;
+        margin-top: 30px;
+      }
+
+      .carousel {
+        display: flex;
+        gap: 20px;
+        animation: scroll-left 30s linear infinite;
+        padding: 20px 0;
+      }
+
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .carousel:hover {
+        animation-play-state: paused;
+      }
+
+      .course-card {
+        flex: 0 0 280px;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .course-icon {
+        width: 70px;
+        height: 70px;
+        background: #5cc4c1;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        margin: 0 auto 20px;
+        color: white;
+      }
+
+      .course-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .course-count {
+        color: #5cc4c1;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      /* Course Categories Grid */
+      .course-categories {
+        background: white;
+        padding: 60px 50px;
+        text-align: center;
+      }
+
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .category-card {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px solid #f0f0f0;
+      }
+
+      .category-card:hover {
+        background: #5cc4c1;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(92, 196, 193, 0.2);
+      }
+
+      .category-card.featured {
+        background: #5cc4c1;
+        color: white;
+        grid-row: span 2;
+        grid-column: span 1;
+      }
+
+      .category-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+
+      .category-card h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .category-count {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      /* Testimonials - Auto Rotate */
+      .testimonials {
+        background: white;
+        padding: 60px 50px;
+        text-align: center;
+      }
+
+      .testimonial-carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 50px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .testimonial-card {
+        flex: 0 0 600px;
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: testimonial-scroll 15s ease-in-out infinite;
+      }
+
+      @keyframes testimonial-scroll {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(0.95);
+        }
+      }
+
+      .testimonial-card:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .testimonial-card:nth-child(2) {
+        animation-delay: 5s;
+        opacity: 0.3;
+      }
+
+      .testimonial-card:nth-child(3) {
+        animation-delay: 10s;
+        opacity: 0.3;
+      }
+
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #ddd;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 3px solid #5cc4c1;
+      }
+
+      .testimonial-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .testimonial-role {
+        color: #5cc4c1;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .testimonial-text {
+        color: #666;
+        line-height: 1.8;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-dots {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .dot.active {
+        background: #5cc4c1;
+        width: 30px;
+        border-radius: 5px;
+      }
+
+      /* Blog Section */
+      .blog {
+        background: white;
+        padding: 60px 50px;
+        text-align: center;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .blog-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .blog-card:hover .blog-image img {
+        transform: scale(1.1);
+      }
+
+      .blog-content {
+        padding: 25px;
+        text-align: left;
+      }
+
+      .blog-meta {
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 15px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .blog-content h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .blog-content p {
+        color: #999;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      /* Pricing Section */
+      .pricing {
+        background: white;
+        padding: 60px 50px;
+        text-align: center;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .pricing-card {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 40px 25px;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .pricing-card:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .pricing-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .pricing-amount {
+        color: #5cc4c1;
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .pricing-description {
+        color: #999;
+        font-size: 14px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .btn-get-started {
+        background: white;
+        color: #5cc4c1;
+        border: 2px solid #5cc4c1;
+        padding: 12px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.3s;
+        width: 100%;
+      }
+
+      .btn-get-started:hover {
+        background: #5cc4c1;
+        color: white;
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        background: #5cc4c1;
+        color: white;
+        padding: 60px 50px;
+        text-align: center;
+      }
+
+      .newsletter h2 {
+        font-size: 42px;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      .newsletter p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 0;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        font-size: 14px;
+        background: white;
+        color: #333;
+      }
+
+      .newsletter-form input::placeholder {
+        color: #999;
+      }
+
+      .newsletter-form button {
+        background: #2d9693;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .newsletter-form button:hover {
+        background: #1f6a65;
+      }
+
+      /* Footer */
+      footer {
+        background: #f9f9f9;
+        padding: 60px 50px 40px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .footer-section p {
+        color: #999;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .footer-section a {
+        display: block;
+        color: #999;
+        text-decoration: none;
+        font-size: 14px;
+        margin-bottom: 10px;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #5cc4c1;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        background: #e0e0e0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #5cc4c1;
+        font-size: 18px;
+        margin: 0;
+        transition: background 0.3s;
+      }
+
+      .social-icons a:hover {
+        background: #5cc4c1;
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #e0e0e0;
+        padding-top: 30px;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+      }
+
+      @media (max-width: 1200px) {
+        .categories-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        header,
+        .hero,
+        .benefits,
+        .courses-intro,
+        .course-categories,
+        .blog,
+        .pricing,
+        .newsletter {
+          padding: 30px 20px;
+        }
+        .hero {
+          flex-direction: column;
+        }
+        .benefits {
+          flex-direction: column;
+        }
+        .categories-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- TOP BAR -->
+      <div class="top-bar">
+        <div class="logo-area">
+          <h1>ACADEMIA</h1>
+          <p>ONLINE EDUCATION & LEARNING</p>
+        </div>
+
+        <div class="top-right">
+          <div class="info">
+            <i class="fa-regular fa-clock"></i>
+            <div>
+              Monday - Friday<br />
+              <strong>8:00AM-8:00PM</strong>
+            </div>
+          </div>
+
+          <div class="info">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              Call Us<br />
+              <strong>+2 392 3929 210</strong>
+            </div>
+          </div>
+
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-solid fa-globe"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAV BAR -->
+      <div class="nav-bar">
+        <nav class="nav-links">
+          <a href="#" class="active">Home</a>
+          <a href="#">All Courses</a>
+          <a href="#">About</a>
+          <a href="#">Team</a>
+          <a href="#">Pricing</a>
+          <a href="#">Journal</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="certificate-wrapper">
+          <button class="btn-cert">GET CERTIFICATE</button>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <p style="font-size: 14px; text-transform: uppercase; opacity: 0.8">
+          WELCOME TO ACADEMIA
+        </p>
+        <h1>Best Online Education Expertise</h1>
+        <p>
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary">GET STARTED NOW! →</button>
+          <button class="btn-secondary">VIEW COURSE →</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcEBQEDCAL/xAA+EAACAQMDAQYEBAMGBQUAAAABAgMABBEFEiExBhMiQVFhB3GBkRQyobEVwdEjQlJi4fAzcoPC0iQlNDVE/8QAGwEAAgMBAQEAAAAAAAAAAAAAAAIBAwQFBgf/xAAqEQACAQMDAwMDBQAAAAAAAAAAAQIDBBESITEFQVETFGEGMpEWIiNxof/aAAwDAQACEQMRAD8AvGlKUAKUpQApSlAClK65pUhiaR2AVRkknFAH0zAeYHzqGa/8TOz+ju8S3BupkzuWIHaMerHj7VDfiL8RLG80+Sy0W6uN8iqHdRhQvUjnknp7dfpVLzXE8zlZnIbAZm5xxUZGSLqg+M1k9yqS6XNHEeS5lB2j3GKnOjdqNK1m0jubK8iKP5OwVgfMYNeWcOFZLgbZSOMjbuFZWk6rdaZqEd7bEx3CDHKAq3sfUVGScI9ag5rmoL8Nu2KdobOWKfZDcxEYgz0X29s548unQCp0DmpQrWBSlKkgUpSgBSlKAFKUoAUpSgBSlKAFV38YdRt7TQJop5XEkgC28Stjcxzkn5Afr71YTNgZ8qor473rSapZWqzpiKEuY9+WVj6jy4/nQSiA6Jp02t30cMMP9kpO5hzmrm7PdidNt7VfxFussmMePkVD/hrbQaZpyX94lyxnTcBHCzBU8jwOKtDSr+xvIybO9ikA6hW5B9x1FYpzcpfBuhBRjnuRftN2Ctbm0YWGIHU7hgZGcYqntb06+0q8Nvdo424xnj5EGvSc7tsLKcn0qp/irZzG2juOApYKyt6E4/pRCpplgmdNODfcg+j6tdabqYmsbt4X2+B+uM+o8x7GvTHY/Wk1vRoZyx/EqoW4jYYaN8dCK8oW4/tHww4Q5BPmDV6fCHVzqU7I7IJ4bUJI3AMq+EJkeoGR9vWtedzG1lFsUrgHIBrmmKxSlKAFKUoAUpSgBSlKAFKUoAxtQmW3s7id/wAscbMfoM15X7T6lJ2j7QXN0SyG7l3osmOFx4f9+9eoO0DRjRrxZs7HiKHAyTu4wPfmvJ18lxp+qyWzSMslvL3cbHxYK+FfpwKWXA8OS74uzkj6Jpy2c8sLQwoh7vGSAuMc196FoV5BeQz3s6zzAYafu+7ZuueB5dKytO178NFBbmPdKQET3rOk1q1glmS/mFvIkZbMnAx7HzrBlYwdLT3Irrx1VnluYzdtGnIigujESucfU+vtUQ7SXU15o0veC8EUTeMXEm8e2Cfp51amlX9jPCqGRJUJ8Ldc8VC/ipfW0ejy2tsqB5iqhRj1/pTRa2SInHZsqK18RAwQRy2fWpr2BuJo752tWf8AFhCI2QlcMzKsZ44I3HkHjGahEcoZ2dozkrtOD1Oa3Gl3K21xI0gdl2sWIODsBBb9vL9elbGYEetkbcMj5V9Vpey7yNpirJM0xjd4xIxyXVWZQ2fcAVufOmRWzmlKVJApSlAClKUAKUpQApSlAGu17/6q5YMUKrkOMeEjkNz6HB+leVNaRY9SuRNL+IVJ5F7/AKGVucMfr+1erda2jS7stux3THCjJPHTFeZO1Vq9lNHbSW8Txxhn2RjDd0TuwPQLwMj3zx1hjxJ32Wu7ftNo6LLnvBGM7GKsjjqVPzFbu6jspoFFxPIJIhnY5EmD6jcMj71Aey5k0y2gvbDcqF3aNXP5kJyAfpUxbtfp00eLmwxIB/gB/WufLCk8HUg8xWTHC3EjGS6nhhs4j/ZiNMO3zPT24qtu3OoJdX6wROW2HLc9PQVK9Z1W61Tf+ETuYVXwgeXvVYPuE8veA7yT+bn71ZbxTlkpup4jpR2xlREAnXzGPnzWx0kDvGWcbo5ImQHzQ+o961sRZmXYh6Y6ZHzrYWF0tnNExiWYI4xFKuVYZ8x75/XjmtTMSPR/w8vGn0m1dpVdpBsuEX8qzKB4l9AwwSOmeR1OZn51VPwZuf8A2owhmI75pEDnJKA7cg+fAGfTAq1Qc4PrTIWXJzSlKkUUpSgBSlKAFcVzXyxxQBj6hfW+n2z3F1IEjTkmoLqPxElWRlsLNNg6NMSSfoDWq7b64uqXxjt5CbaAFUIPDHzb9OKizcmklLweq6b0am6aqV1lvsSm5+ImtlSBBp+0joYX/wDOo6ba57UQSrqfdm3jcMQiYLvyepJPmfvWNNkKMeVTns1aQtoFo6jG8F3/AOYk/wC/pVNWclHYuv7O2oUk4QWXsaD+HhEMSLtWNFwAOnlXR/BllwTk+vFTEWH/AKiYkeHYOfqaR2abOByawYZydjRWmiIIdirnPBrD1j4b2WqRCRGaC5UYV1H7jzqdWts3Cqg46kmsPXdR/h0TBX8SjL7R6nAHzJI+9WU4NPKYjet6EijNe7G69ok2Gs3uoScLNAu4fUDkGtJLBOjBbmGSKXGNsiFd33q1Ly5muWMl1IzseQu7wr8h/WtdcQQ38LW12m6PHhAHIPqPet6bxua59DnGk5qW/gzPhrLdPFEIrtLWKzuRK6Og/tNjDeVbGRlWIIz+hq87QMIUDDBxnaeo9q8/fDMyx6yNN3tK0lyiSRZABKt+bB6rsEnTB5A5B4vvTAVWVcnYJWVFP90DAx9wT9aeJwJ8mbSlKYQUpSgBSlKAFRvtvq50vSGWLPf3BMceD045P0H7ipHVPfF2/wD4hdT2cY/+CFPPmTgn9MUGm0pudTUlnSm/waCaZAoUuox68V1rcQBzumiA9N4qHZbPGKBnq9W0Dd+orrhRRL5bu0P/AOiMH0zW/wCzfavTtPsms7yYbQ5aIp6HqDn3/eqxG7cOtckFql21NrDMtx1q6rx0Txgu7Se01hrl7LZ2SzCRI+9JcABlyBxg+pFbaYw28RluJVijX+8xwKpPRb+4067Wa0lMUjqULDHQ4OOff9q3015Pc5kuZ2k2gndI+cD2rDXtowntwdDpVpO8papS4ZLtQ7TyzP8AhNJDIGO03BHiP/KPL51o+0V0lrBFCz5y24lsndgdSfPr966tAUSXL3Dk7UTKj+dajXJhcaxISxZYcL9fT7k/pSJb4OnTt4RvY0oL7d38s5jklcb2bul8l6t9f6VzA+G3DjJx8uf9K6pCNn59o689TTeUAJ48Weep96tO7OK0YZjdmrn8B8Q7SVHKbnBYrHu2g5TkZGedvSvQtqZI7rbJ3ZaUbi0QIVj8snB6edeabmND2mti0iRpIgbvG/Kpy3i454IzxzxV/dg7ptU0O2v5jKXG+FVdwwUKxHUDngDnzFTE+dXEHGpJfJKBSlKczilKUAKUrg9KAMXU7uKwsprqdgEiQsaojVLm51W+lbk3N3I2333f3TnyFTf4oatLNOmkQyskKKJJijAFm8lP7/UVW4mFncRSs8h2OrMWOTgEdaqqSaTaPT9KtHToSqvmS/wy7L4f6xLCkklzp0G5Qe7lmbevswCkZ+prLHw6vjjfqelj5SSH/sqYRy55U9QORXZvrzMvqO8W2Ecb2NMiC/Dqbz1iyU/5Y5G/pXxN8P3ht5ZV1eCRkUsEW1fxEDpksKme7jrWTbbSpyM54/n/ACNIvqG8b5WP6J9jSKUjl2BHK42kMec8edb8E3B2ZygPi46+1aTULc2l/d2bcdzNJGB/lycfoFrYWjvNaoinl18RHkPP617GtJThGa7nT+m6miVSkbvRbtWkuWDDHAAB6CtXeSp/ELqbI8Up88D713u5toysRwShABPn5VixQKFy7MXPUnjHNZUt8nct6E43U6vnBx+KthgyTKSPIdPua1V3dm4fMe4AHbzW1uEjEbGaYhMYO58/vWomSFWBtp0kA48JyQKYvuXLZZR93dvG8dpczxySW8LtHIIvzgMPCQCecNz8qu34WX0U+ji2t5ElijjWUtH0R35Kfsce4xwcCpdIuVQSMXMWx1bvWHhUefsSAeR7gVY/wz02bTt08cx726nke6gC4jSMMQnHVW88Z6H2plyeJv2nXm15LNpXA6VzTmAUpSgBWNqN1FZWUt1McRxKWJrIPSoj8QJ0e2gsXOVc95ImfCwHQEeYz5e1LOSjHLLKUdc0isdUu5b68nu5f+JM5c+3+xioxrMgCMG4HNWIbW1uY+7aKFR0BC4I+R8qx7HsvbRava3lxIZ7aGUSG32AbyOmTnnnBrJG5g+T1/vYKi4xWGlsZOlm5jsbVL2J4bgQJ3iOOc4HX96zlkrK7QSpeal+Kt1bDxgMGHIIrBjVicFTXkry3kq0tKyjjwUnHLR3d5WbaK4XvHyF9B1NfFtZMNsjkD0z0rsnlljbw9far7Xp6f7qv4GwRzUtC7NT6jPd3st280+Mxq2xeABxxzwB5+VaGLs3qVijPahLy35O6NwHUehUnk/Kp02qmHjmeXyiRc5+Z6CtFPPd3dx3d5LLEWJ7uytuZHHufr/rXoIV5RSj2HtsUKnqQWGQ2W5aRxEoVmHUtkY+1d6M4HVMeykfrmsHT4u9v79ljmRUkKiOQ+JeT1zWx2qi52DPkd2DW2LPT2tX1IazCu4o2j3EHcDnPJqO3z91dr3eNxXqOnNb+9JIAKYH+ZtwP18qjUsu64kkXGASBnnjpTHK6tVUeCaPqFrBDpzWWzZBbI88bqCdwOGYkEg/3SBgcEg5xxa/Y5k1eGO5jg2MkmTdE5eVVwcbvM5Ygn2Iqk9H0S9e6juNRh7mKaBnjjk5Mi+TFf8AD+/0q7fhvcJHpkdsVQ8MI5I2yvBztx5cEHzznr5CVyeSm87k1X1rmuM5FBTlRzSlKAODVRdu9RZ+0V2m7Ai2xgegAB/cn71bp6VX/bDsJdazrL6hp9zAglRRKkpI8QGMjAPkBVVWDlHCLqE1GWWQGDVCh5IrOTXDj81dl38Pe0FuW22yTqPOKUHP3wa1rdmdbhfbJpt0P+mTWKVF+Deq68me2u5XqKxxrTb85861F00dnKYJw/fqSGjVckEdQfIGsK4nv2z+HtIkA85CSaRUl3H9Vk+g1omDnj0JrAu9Wd1IZmI8gF/lUNjm1ucrGblY19Qo4qSaRpVtEEk1GeW7k6kPIdg+g4P1pZRS5HjNy7H0moTMdkUoz/hjHj+2KybLTNVa3lZL0WXfcsEUvNJ6bmPA/XHpW4hvbWJQkSIigYAC4rtF9HnGRzSKbXBa45IONF1LTYc3IErOd0kygnLH1Yg/sK6lLrnOd3Q+P/SrIgvYiDzWu1ux0u6idngVH674xtP18j9a1Que0jp29+qSUZR2K41GRVhcAlZNp2g8gn+tZ9hp1j2d7Iwavcwrc6tqE4W3SVTsgjGG3/M5H04HnWu1SIw3fcK+/JJj58+cfI5rf9ubFvwmn6TY3E1xFa20ZhEybdrMAGHkSPAOoz1rWmmsnH6ndKvUxF7Hxa3TXs095Mqz3ty5ZQFGHY+ZAwODk4HpW00vWtW0GeX8GsLM0IGJEBOSPMg8kH/Wuq2jSx0aJQGZrXaVPGWKkMR9eRXVqsyd3DdWsfexy5KrkAqvp4sZ5pU9zmNbFudita/jOhQyzSl7yL+zulbbuSQeTbeOmOlb8VR9h2l1O0Sye0sO5mtZMO5dB38JH5W8R3YwOf6Vcmj6hHqmmW19CCFmTdtPVT0I+hyKuTKWsGbSlKkUUpSgBXBpSgCm/iJaQxdobt4kCEBJMLwCxHJ+tRd+B60pWGtydGj9p0gkHivtZ3HQ0pVMki3LO1Z5AeGxWQlxLj82a4pSYQ6bMyC4lC8NWXLI72ZyT50pRhZGyyupZDdalcd9ggMFA9v9mpfFfz3Ngl3cnvZlgC7nJydpwCTnOeTSldBcGCsv5DasBENOto1CpNF4jjJ/X1861GrZXS4+f+HIwH3NKVCEMIztHbxlVTkDqKtz4TzyTdmmEhyFmOPqAa5pVkeSqZNaUpVhWf/Z"
+          alt="Student"
+        />
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+      <div class="benefits-image">
+        <img
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop"
+          alt="Professional woman"
+        />
+      </div>
+      <div class="benefits-content">
+        <h3>LEARN ANYTHING</h3>
+        <h2>Benefits About Online Learning Expertise</h2>
+
+        <div class="benefit-item">
+          <div class="benefit-item-icon">💻</div>
+          <div>
+            <h4>Online Courses</h4>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-item-icon">🏆</div>
+          <div>
+            <h4>Earn A Certificates</h4>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-item-icon">👨‍🏫</div>
+          <div>
+            <h4>Learn with Expert</h4>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+      <div class="stat-item">
+        <div class="stat-number">3,000</div>
+        <div class="stat-label">SUCCESS STORIES</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">320</div>
+        <div class="stat-label">TRUSTED TUTORS</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1,000</div>
+        <div class="stat-label">SCHEDULES</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">587</div>
+        <div class="stat-label">COURSES</div>
+      </div>
+    </section>
+
+    <!-- Featured Courses - Auto Scroll Horizontal -->
+    <section class="courses-intro">
+      <h3 class="section-label">OUR COURSES</h3>
+      <h2 class="section-title">Explore Our Popular Online Courses</h2>
+
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="course-card">
+            <div class="course-icon">✏️</div>
+            <h3>Introducing to Programming with WordPress</h3>
+            <div class="course-count">50 lectures (190 hrs)</div>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">⚙️</div>
+            <h3>Advanced Machine Learning Techniques</h3>
+            <div class="course-count">50 lectures (190 hrs)</div>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">🎨</div>
+            <h3>Data Science and Analytics Bootcamp</h3>
+            <div class="course-count">50 lectures (190 hrs)</div>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">📱</div>
+            <h3>Mobile App Development</h3>
+            <div class="course-count">40 lectures (160 hrs)</div>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">🖼️</div>
+            <h3>UI/UX Design Fundamentals</h3>
+            <div class="course-count">35 lectures (140 hrs)</div>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">☁️</div>
+            <h3>Cloud Computing Basics</h3>
+            <div class="course-count">45 lectures (175 hrs)</div>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="course-card">
+            <div class="course-icon">✏️</div>
+            <h3>Introducing to Programming with WordPress</h3>
+            <div class="course-count">50 lectures (190 hrs)</div>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">⚙️</div>
+            <h3>Advanced Machine Learning Techniques</h3>
+            <div class="course-count">50 lectures (190 hrs)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Categories Grid -->
+    <section class="course-categories">
+      <h3 class="section-label">COURSES</h3>
+      <h2 class="section-title">Browse Our Online Courses</h2>
+
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-icon">✏️</div>
+          <h4>UI/UX Design Courses</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">🎨</div>
+          <h4>Art & Design</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">💻</div>
+          <h4>Computer Science</h4>
+          <div class="category-count">10 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">🔍</div>
+          <h4>History & Archeologic</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">⚙️</div>
+          <h4>Software Engineering</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">📊</div>
+          <h4>Information Software</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">❤️</div>
+          <h4>Health & Fitness</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">📢</div>
+          <h4>Marketing</h4>
+          <div class="category-count">15 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">🖼️</div>
+          <h4>Graphic Design</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">🎵</div>
+          <h4>Music</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">📅</div>
+          <h4>Business Administration</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">💻</div>
+          <h4>Web Management</h4>
+          <div class="category-count">25 Courses</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials - Auto Rotate -->
+    <section class="testimonials">
+      <h3 style="color: #2d9693; font-weight: 600">TESTIMONIAL</h3>
+      <h2 style="font-size: 40px; margin-top: 10px">Our Successful Students</h2>
+
+      <div class="testimonial-wrapper">
+        <div class="testimonial-box">
+          <div class="testimonial-header">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop"
+            />
+            <div>
+              <h4>EMILY DAVIS</h4>
+              <div class="testimonial-role">UX DESIGNER</div>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            The design courses here are world-class. I've learned skills that I
+            use every day in my professional work.
+          </p>
+        </div>
+
+        <div class="testimonial-box active">
+          <div class="testimonial-header">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop"
+            />
+            <div>
+              <h4>JAMES WILSON</h4>
+              <div class="testimonial-role">PRODUCT MANAGER</div>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            Best investment I've made in my education. The certificates are
+            recognized by top companies worldwide.
+          </p>
+        </div>
+
+        <div class="testimonial-box">
+          <div class="testimonial-header">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop"
+            />
+            <div>
+              <h4>LISA MARTINEZ</h4>
+              <div class="testimonial-role">BUSINESS ANALYST</div>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            Flexible learning schedule and excellent support. I could learn at
+            my own pace while working full-time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+      <h3 class="section-label">OUR BLOG</h3>
+      <h2 class="section-title">Recent From Blog</h2>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-image">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA+AMBIgACEQEDEQH/xAAbAAADAAMBAQAAAAAAAAAAAAAAAQIEBQYDB//EADsQAAEDAgMFBgMGBAcAAAAAAAEAAgMEEQUSIQYTMUFRIlJhcYGRFMHRByMyQqGxFXLh8BYkMzRDRIL/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQMEAgX/xAAlEQACAwACAgEEAwEAAAAAAAAAAQIDEQQhEjETBRQiMkFRUiP/2gAMAwEAAhEDEQA/AO/CoKQqCgkoKgpBTBQgpCSaAYTSTCkkaaQTQDCd1KY4oQUmpTOjb8kAOcGtzONguZxzadtKHx0bWuez/UdxyhVtLicsOaNkwZEB2nMPaPgFo8Hw8Yr93SAMYNZZXdr0WSy7XiNVVPWyPZu1YqjuoqsNlcwPBJtmvros6g2knpzatyyx94EXC0eKbBNgAmoKnLOzgXMBHsVzoqqyjrmUOMUkMrHnKJIog0j/AMjRVbNPUy3wi/Z9koa2nr6YTUkjXsJsbHgV7r5ns1jVHS4qyKjkflc/K9gFr+a+mXWuqfmjLbX4MSSZSVpUCRTKkoAQhJACSaSEgUkIQgEkIQHgEwpCoFQSVdMKVQQgpNTdNAVdASTUklXQkmgGmElQQga86mQQwPkNuy0u18AvQLT4riAZHJE0tBItci6rsl4o7hFykfMNtcV+CradtOHvdI0mSzrZyeR8F3+FPZs3gNI0xb4ZA57mvaCXHUr57VxQTVAqal4MrJzx1Fxq0L6djtBQS0LWVMDSwHs2be1/6rLDMNkky/4lTVtJ8VG8siIOrxYjzXAbS1tHJVxz0tTHI+N4NmHXjqt/tDQ/w7B6ZkL5I2ulBLLghrbW1vfW65vHMMZQUlRUS1RdG5hc2IG4Y7kR5KWt6OlqWk1D4oKpuJ0D2xyvbc5QO1fjZd3sftEzFodxOctUwXA748PJfKcLs/CnTyOLO1lY066nUWPh811Gx0cgxeimabEvycOLcup9VzBuEzmxKUNPqSSAi63IwAVKd0ipJEhBSKAEIQgEhCSEAhBQgMUFWCvMKwoJKCpQFQQFBMKVQQgpCSYUgYKd0kISUqCgKwhAz4LitommKoexwL3PuAzNa7SevI8/RdryK4zal0kcTnOaTMQTktrblbx/os3JX4mjj75HCbRxiXLHRuYGtBJJNtV9LwuePaCjo8Tp53RyMbcxixDX/mBBB+q+Uzj/ADFnkiNxALRwIPXouu2AqJImTlvZJf2owbhUJ4bHBmbtM+onnaIWyueDbLKwBg8bg6+y5bbysaaeno9618rg0Oy9OZXR7WYjVRwSbprWk81wVDSVFTUySyB+9yl2Z41J8z+ylNbpLUnHEjbYbSRS4GJJWPexv3eVpymN973163C6PY6NlLVUc9TcxdqONw7/AAFx6fqtFs82Rzt1M4O3krw6/wCawZb5rqcGwycxsqTHna2sZJmjb2sg428LkadAoj+/RXNZDs7xIlO91JW9HniQUFIqQCSEIAQhJCAQhJABQhJAYoVBQFQUEnoFSgKggKVBeaoIQWEJJoBppJhSSUqCkKJX5WkLlvCyut2SwckwaD4Ln8Vpvj5t85x+6BaWNNrg258lsoXZ9Oi8WtyVjhycFRN+R69VMaziqzY2tZKZaSWOUOGjZ+LfC62GzOEGmbUODjZsjmiS/adbTULr3C4sOWq12FiNk1VTtOuYu9Sq3BF6acX0ayuj3tDUVEYjOSIvaSLm/wAlz8lHKXsMDxICQ+SUDLG0cwOpXVzRR08LYR287w19+BF+C8tp2Nho4oYmhuZ1rAWChx6LYtJ+P9nH09M985kaHtAfoOC7XBcZbT/dVETxG4izhrk+oWNS0zI6SMu1fK8N/v0VzUcjohBE7IP+Vw1Pg0fPwt1SC8e0VXUwsWHWtcHtzNIc0jQjmkVpNnKgs3lE8kZe1GCb6c/kt0Vsi/JHg21uubiIoKSCuisEkFJANJCEAJHghJACEkIDGCoKAVQIXILCakFUFIKCpRdNAUFQUtVIQUEwkCm0XQlLXiJdI1ptwKw6qYAHUXRWybmYvd+BzQPIrV1k5EJcD2RrcqiUtZ7nGoUVpsqXSVw8UVLQXhzCLpU5BeHDm269g0W4KYx1FHJ5Eqp9AHgDV2q09BT1MOL1U0jCIXvu12YG48luLDonYdF18ZnjzrI70a2ankkroXhv3TX5nG/ySxikkrZqfdi8bXXcSbaLaadEWCfGsH31m6aerpqx7csETQGStc27vxAHVVU0VbMY4YpdzASXzSA3e89B0C29k7J8aH31pyc3xOH41BK5gjY0dgB18zefrou0Y8Ssa9n4SAQtDisBmrY3usGMjuT6lZeATOlonBzicj7C/IcVEOnh3ydsqVj9myKlNK6uPPBCRKLhACEkrqAMpJXQgGhJCAxAqChMFQD0CpqgFVdAWndSCmpBYVKAqCAtqw66vbAcjWm5H4nOAH19gso8LhYJjzyummtb8rQBe3iVXYzdwoRb8maSuxhsFDPKCXyHssNwWX81rDiUdVhT5HPDWuZfjz4Ee4K39RTfHwTPqGU7IyCM7zy/m+mi41+AV9RhldkELYaQZo3xuzCQG17egJ9FmentwnWo6ztsAqRV4dSzj88Q91tOS5bYIOgwqOlkeXuje7U9Cb/NdVZaavR4v1Bf9RITSXZgBNJCAd0JE8VqcQxB7JCG1dJCxpsTI65J9OCiUvE7hBz9GJtJNN8UIg6zA0cNLlbTZuPJQOcdS565uuqad9c5wqW1D5A0EMIs0jRdXgpH8NiDeAuqa5eU2brnnGUTNuldBKS0HmgUroukhIXQldCAEJEoQAShIoQGKEwpBVBQMKCtQFQQFAq1AVAqQUFQKi6oICxqLLCkYZGujedXHt+SzAtNjtUWyCKIhrrds9fBFW7HhZDlfbpyZ51skJqQ+QxyCJo3ULj2Q7rbqNAOmqt74qemfXV2I3a1hc8McGMy9NVoai8jCHdNNFq3/GtLmRFgaQRxLbgq98JePTKo/WbH04nZ4ZNhf+U/h2XdVMZkgkadJLcW+et/Q9FtlwGBVrdnw346/wAGHmRrYmh27cQQbADQHMTYc7rcnbvArXZNO8Xt2ISVn+N19Msdj5D8onTJXXLO27wq2kGIO8RSuXmNuqBzg2OjryT1gLf3TUdKiz/J1l0XC5CTbmnZ/wBGpPnYfNYc/wBolMw2+EeD0c8JqDotXuJ28huwhaj4iSMyB5c1/AZg0N9Fycv2hsLcwiDQLX7dz7Bezm1+O0ofXA09M/8ADGTZ729SOQ/VPhVvSZy7Z8deUl0euI1ggkfJPK5znA2aLXcfRdVs3iVLLh8MBqI9+BrHex9Oq4g0VLQxmKGNuW3MLW1cpjtJG7Lbu6K+vgqC3TJP6k7PxUej7CUrrldhcelxOGSjq3F88ABDzxc0rqL34Kpx8XhcpeS0aSV0rqDoaFOiLoARdK6SDCroU3QgwxgrC8wVYOqgkpUFKYQF3TBUAoQg9QVQK8wqBUg9AVy+PvAq5H310FvJdMCuX2qh3FVHUZbMnG7L+OU8gVdQ0pdmfkpuHRz89fI24sAb8Cte+tL3aaa+yyKpmbQjK65FjzWqLCx7jfS636edhkvkdNmzvuCOnFaKuw8h7nwm1+V+K24yuaQ3ly6JNDToXEgnmFxOCkuy2q11vUcq6aqgcQyaaF3QPNiqOMVtg2SoeT4roqyijmuHNb6haf8Aw9VyzhsLQ5hOpJAIHhfifJYrOPn8HqUc6eYpGBJiEj/xOLl7YdRVeKz5KSnLzzcRo3zK6HAdjXTsZU4wHwxO1bTjR7h49B+vku1hgpqSnZDSwRxxsHZYxtm/1XVfGT7ZXd9Qkut00WBbJUuHPbVYg5tRO03Yy3YYeviVuausazU8+SmpntdjeWvktPUVF9XEED6rZCEYLpHlWWzteyLqpwGP1INrrQTyF5ICyKqUyGw9FiktaASCDfh1UTmd1w/k6b7OgRj7jc/7d9/HVq+lnRcP9nOHua2fEZAWtLd1F4j8xXak+FlhtfZ6VSyOBdInVIlTdVluFXSupui6gFaJEqbpXUgq6FN0IDxF+h9lQDu6fZbIDwVBptyTBprbO7p9lQDu6fZbENVBqYNNdZ3dPsgB3dPstnZMBMI01tnd0+yoB3dPstiAiyYQYADu6fZEkLZ43RyxB7HCxa5twQtgmC3dZiRl5+J6IPZx2LbNMdebD+y4figPBw8Oi4mrpXtJD22eHWOliF9ebUxNzCQNaw6scdLDz/vktfiWA4RjErJqhp3mmYwyFt/Oyvha17M9lG9o+RSNfEXZSLg8V4ipyvsRzX1uu2NwWemyxUUjT+XcuLXE+d9fVcdN9nk3xbTUVzqWNwDhC9rXygc+0CG+tvRdvkxXs4XFkzT0VM6vmbFFI3eO4N4kroYMJgwx2edu9qm6tL26M/l+q3+DYLheCRkUcQzuFnSvN3u8z9Esc+HrYMjjaX8jgdQfoqvvE5Y/Ra+BLxbXs0++Mz9b8eHJY807YD2nXc42Deiw6zE2UMbYIu1MQLvA09FpDNLM/M4kEnUkLd5rNR5yre4zYVdXmPZdw425+S1VRMBd0r8oOtzpZZFPTz1kghp2F8jjazT+HzX0XZbY+ioZop6/LV1riS3O3sQi2uVp58Bc3OvLgqp3IvqobPl9RBPDTRVU1PLHC8ndSSNIDj4XW/2M2fbi03xlVGXUcR4OGkp6eS6/7RMMZivwFAx4jHxAJPJreJ/S62lE2no6WOmpoxHFE3K1vh9VldjaNiqSPVkbYmNiiYGMYLNa0WAHkkQehXoJAVWZVlpjkHoUrO5NPsskJoTpi5X90+yWV/dPss0J2TBphZH90pZH90rNISITBphbt/dKFmgIQg9AFYQhSCkwNUkIC7IshCAYCLIQhBLx2HeS1pleYS0nTN8ghCAw62d7JYmixAYXai621DI57pATbKW2t4jVCFC9gyI3u3rRfg539/quP2tnk/xMwBxAZTgADzKEKu79S2j9jAdVTaDNyXOYnjFVFM0NLdZANQevmhCor7NNhGJkNo4qgNbn3TdLaG8bXfuSuXocRqarFYIpXDducRkAsOB+iaFv38Uebi8mfUtnqWKAiaJtnkanry1XVU9Q99RAdBZ5Zp0LL/uB7IQuEWs1m1D3byB9+0Jma+pCqncXN1QhcR9sl+jNYvUIQuiD0HBNCEAwmhCkFWUkBCEArIQhAf/Z"
+              alt="Blog"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>👤 ADMIN</span>
+              <span>📅 OCT. 15, 2030</span>
+              <span>💬 3 COMMENTS</span>
+            </div>
+            <h3>Build your Dream Software & Engineering Career</h3>
+            <p>
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-image">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
+              alt="Blog"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>👤 ADMIN</span>
+              <span>📅 OCT. 15, 2030</span>
+              <span>💬 3 COMMENTS</span>
+            </div>
+            <h3>Build your Dream Software & Engineering Career</h3>
+            <p>
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-image">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=250&fit=crop"
+              alt="Blog"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>👤 ADMIN</span>
+              <span>📅 OCT. 15, 2030</span>
+              <span>💬 3 COMMENTS</span>
+            </div>
+            <h3>Build your Dream Software & Engineering Career</h3>
+            <p>
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+      <h3 class="section-label">OUR PRICING</h3>
+      <h2 class="section-title">Pricing & Packages</h2>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="pricing-title">BASIC PLAN</h3>
+          <div class="pricing-amount">$49K</div>
+          <p class="pricing-description">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </p>
+          <button class="btn-get-started">GET STARTED</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-title">BEGINNER PLAN</h3>
+          <div class="pricing-amount">$79K</div>
+          <p class="pricing-description">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </p>
+          <button class="btn-get-started">GET STARTED</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-title">PREMIUM PLAN</h3>
+          <div class="pricing-amount">$109K</div>
+          <p class="pricing-description">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </p>
+          <button class="btn-get-started">GET STARTED</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-title">ULTIMATE PLAN</h3>
+          <div class="pricing-amount">$149K</div>
+          <p class="pricing-description">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </p>
+          <button class="btn-get-started">GET STARTED</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <h2>Newsletter - Stay tune and get the latest update</h2>
+      <p>Far far away, behind the word mountains</p>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter email address" required />
+        <button type="submit">✈️</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>ACADEMIA</h3>
+          <p>ONLINE EDUCATION & LEARNING</p>
+          <p>
+            A small river named Duden flows by their place and supplies it with
+            the necessary regelialia.
+          </p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-solid fa-globe"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Explore</h3>
+          <a href="#">→ About Us</a>
+          <a href="#">→ Services</a>
+          <a href="#">→ Courses</a>
+          <a href="#">→ Blog</a>
+          <a href="#">→ Contact us</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#">→ Contact Us</a>
+          <a href="#">→ Pricing</a>
+          <a href="#">→ Terms & Conditions</a>
+          <a href="#">→ Privacy</a>
+          <a href="#">→ Feedbacks</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Recent Posts</h3>
+          <a href="#">📅 Oct. 15, 2030 - Creativity and Inspiration</a>
+          <a href="#">📅 Oct. 15, 2030 - Creativity and Inspiration</a>
+          <a href="#">📅 Oct. 15, 2030 - Creativity and Inspiration</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Have a Questions?</h3>
+          <p>📍 203 Fake St. Mountain View, San Francisco, California, USA</p>
+          <p>☎️ +2 392 3929 210</p>
+          <p>✉️ info@yourdomain.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Copyright ©2026 All rights reserved | This template is made with ❤️ by
+          Amarjit Kumar
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Auto-rotate testimonials
+      let currentTestimonial = 0;
+      const testimonialCards = document.querySelectorAll(".testimonial-card");
+      const dots = document.querySelectorAll(".dot");
+
+      function rotateTestimonial(index) {
+        currentTestimonial = index;
+        testimonialCards.forEach((card, i) => {
+          if (i === index) {
+            card.style.opacity = "1";
+            card.style.zIndex = "10";
+          } else {
+            card.style.opacity = "0.3";
+            card.style.zIndex = "1";
+          }
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+      }
+
+      // Auto-rotate every 5 seconds
+      setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+        rotateTestimonial(currentTestimonial);
+      }, 5000);
+
+      // Initialize first testimonial
+      rotateTestimonial(0);
+    </script>
+  </body>
+</html>
