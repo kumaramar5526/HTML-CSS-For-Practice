@@ -66,6 +66,21 @@ No JavaScript, no frameworks
 
 ---
 
+### 5. Academia Inspired Education Website
+
+Responsive Education Website Layout using HTML5 and CSS3
+
+A fully responsive educational website layout inspired by a modern eLearning platform design. This project focuses on recreating a professional level UI using only core HTML and CSS without Bootstrap or any external frameworks.
+
+Key features
+Custom responsive header with angled call to action button
+Multi section homepage structure
+Flexbox based navigation layout
+Structured content sections
+Clean spacing and typography
+
+---
+
 ## Technologies Used
 
 HTML5,
